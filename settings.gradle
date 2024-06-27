@@ -58,7 +58,7 @@ dependencyResolutionManagement {
             // Versions for dependencies
             version('compose', '1.5.1')
             version('coroutines', '1.7.3')
-            version('dagger', '2.51.1')
+            version('dagger', '2.47')
             version('errorprone', '2.18.0')
             version('kotlin', '1.8.22')
             version('mockito', '5.3.1')
@@ -90,7 +90,7 @@ dependencyResolutionManagement {
             library('androidx-test.core', 'androidx.test:core:1.4.0')
             library('androidx-test.ktx', 'androidx.test:core-ktx:1.5.0')
             library('androidx-test.ktx.junit', 'androidx.test.ext:junit-ktx:1.1.5')
-            library('androidx-test.rules', 'androidx.test:rules:1.4.0')
+            library('androidx-test.rules', 'androidx.test:rules:1.6.1')
             library('androidx-test.runner', 'androidx.test:runner:1.4.0')
             library('androidx-tracing', 'androidx.tracing:tracing:1.0.0')
             library('androidx.vectordrawable', 'androidx.vectordrawable:vectordrawable-animated:1.1.0')
