@@ -211,7 +211,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
    * still be called with {@link RequestListener#onLoadFailed(GlideException, Object, Target,
    * boolean)}. In the same scenario, the {@link RequestListener} added only to the primary request
    * will not have {@link RequestListener#onResourceReady(Object, Object, Target, DataSource,
-   * boolean)} called when the thumbnail request finishes successfully. Similarly, if you add a
+   * boolean,int,int,long)} called when the thumbnail request finishes successfully. Similarly, if you add a
    * {@link RequestListener} only to a thumbnail request, but not the primary request, that {@code
    * listener} will only be called for changes related to the thumbnail request. If the thumbnail
    * request fails, the {@code listener} added to the thumbnail request will be immediately called

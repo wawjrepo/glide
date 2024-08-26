@@ -184,14 +184,14 @@ public class RequestTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.DATA_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
     verify(requestListener, never())
         .onResourceReady(
             ArgumentMatchers.<Drawable>any(),
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.RESOURCE_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
     assertThat(imageView.getDrawable()).isNull();
     mainModel.countDown();
   }
@@ -224,14 +224,14 @@ public class RequestTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.DATA_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
     verify(requestListener, never())
         .onResourceReady(
             ArgumentMatchers.<Drawable>any(),
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.RESOURCE_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
     assertThat(imageView.getDrawable()).isNotNull();
     mainModel.countDown();
   }
@@ -264,14 +264,14 @@ public class RequestTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.DATA_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
     verify(requestListener, never())
         .onResourceReady(
             ArgumentMatchers.<Drawable>any(),
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.RESOURCE_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
 
     // Only requests that are running are paused in onStop. The full request should take priority
     // over the thumbnail request. Therefore, if the full request is finished in onStop, it should

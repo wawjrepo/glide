@@ -65,7 +65,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
     assertTrue(future.isDone());
   }
 
@@ -108,7 +108,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
     future.cancel(true);
 
     verify(request, never()).clear();
@@ -127,7 +127,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
     future.cancel(true);
 
     assertFalse(future.isCancelled());
@@ -146,7 +146,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
     assertFalse(future.cancel(true));
   }
 
@@ -159,7 +159,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
 
     assertEquals(expected, future.get());
   }
@@ -173,7 +173,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
 
     assertEquals(expected, future.get(1, TimeUnit.MILLISECONDS));
   }
@@ -234,7 +234,7 @@ public class RequestFutureTargetTest {
         /* model= */ null,
         /* target= */ future,
         DataSource.DATA_DISK_CACHE,
-        true /*isFirstResource*/);
+        true /*isFirstResource*/,0, 0, 0);
     future.get();
   }
 

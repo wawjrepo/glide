@@ -159,9 +159,9 @@ public class RequestBuilderTest {
 
     // The #listener API removes any previous listeners, so the first listener should not be called.
     verify(listener1, never())
-        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean());
+        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean(),0, 0, 0);
     verify(listener2)
-        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean());
+        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean(),0, 0, 0);
   }
 
   @Test

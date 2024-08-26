@@ -152,7 +152,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -179,7 +179,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -215,7 +215,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.RESOURCE_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -253,7 +253,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.RESOURCE_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -277,7 +277,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -303,7 +303,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -320,7 +320,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -339,7 +339,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -365,7 +365,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -393,7 +393,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -429,7 +429,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.RESOURCE_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -461,7 +461,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -490,7 +490,7 @@ public class LoadBytesTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.DATA_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   private Bitmap copyFromImageViewDrawable(ImageView imageView) {

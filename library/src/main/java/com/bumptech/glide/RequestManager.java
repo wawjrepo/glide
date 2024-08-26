@@ -224,12 +224,12 @@ public class RequestManager
    * individual {@link RequestBuilder}s. {@link RequestListener}s are called in the order they're
    * added. Even if an earlier {@link RequestListener} returns {@code true} from {@link
    * RequestListener#onLoadFailed(GlideException, Object, Target, boolean)} or {@link
-   * RequestListener#onResourceReady(Object, Object, Target, DataSource, boolean)}, it will not
+   * RequestListener#onResourceReady(Object, Object, Target, DataSource, boolean,int,int,long)}, it will not
    * prevent subsequent {@link RequestListener}s from being called.
    *
    * <p>Because Glide requests can be started for any number of individual resource types, any
    * listener added here has to accept any generic resource type in {@link
-   * RequestListener#onResourceReady(Object, Object, Target, DataSource, boolean)}. If you must base
+   * RequestListener#onResourceReady(Object, Object, Target, DataSource, boolean,int,int,long)}. If you must base
    * the behavior of the listener on the resource type, you will need to use {@code instanceof} to
    * do so. It's not safe to cast resource types without first checking with {@code instanceof}.
    */

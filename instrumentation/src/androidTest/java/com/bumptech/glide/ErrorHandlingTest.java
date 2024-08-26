@@ -110,7 +110,7 @@ public class ErrorHandlingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             any(DataSource.class),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
     verify(requestListener, never())
         .onLoadFailed(
             any(GlideException.class),

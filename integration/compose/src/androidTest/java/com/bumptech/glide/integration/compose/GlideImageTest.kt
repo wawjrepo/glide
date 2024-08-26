@@ -314,9 +314,12 @@ class GlideImageTest {
       override fun onResourceReady(
         resource: Drawable,
         model: Any,
-        target: Target<Drawable>,
+        target: Target<Drawable>?,
         dataSource: DataSource,
         isFirstResource: Boolean,
+        width: Int,
+        height: Int,
+        duration: Long
       ): Boolean {
         onResourceReadyCounter.incrementAndGet()
         return false

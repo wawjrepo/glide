@@ -90,7 +90,8 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),
+            0, 0, 0);
   }
 
   @Test
@@ -146,7 +147,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             not(eq(DataSource.MEMORY_CACHE)),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -185,7 +186,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.DATA_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -216,7 +217,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -302,7 +303,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.DATA_DISK_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   // Tests #2428.
@@ -408,7 +409,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -451,7 +452,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.MEMORY_CACHE),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -490,7 +491,7 @@ public class CachingTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             not(eq(DataSource.MEMORY_CACHE)),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   private void clearMemoryCacheOnMainThread() {

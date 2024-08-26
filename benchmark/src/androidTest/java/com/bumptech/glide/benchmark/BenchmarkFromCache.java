@@ -27,7 +27,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-/** Simulate loading a file from Glide's cache as a thumbnail in various sizes. */
+/**
+ * Simulate loading a file from Glide's cache as a thumbnail in various sizes.
+ */
 @RunWith(AndroidJUnit4.class)
 public class BenchmarkFromCache {
   private final ConcurrencyHelper concurrencyHelper = new ConcurrencyHelper();
@@ -118,12 +120,9 @@ public class BenchmarkFromCache {
                   }
 
                   @Override
-                  public boolean onResourceReady(
-                      @NonNull Bitmap resource,
-                      @NonNull Object model,
-                      Target<Bitmap> target,
-                      @NonNull DataSource dataSource,
-                      boolean isFirstResource) {
+                  public boolean onResourceReady(@NonNull Bitmap resource, @NonNull Object model,
+                      Target<Bitmap> target, @NonNull DataSource dataSource,
+                      boolean isFirstResource, int width, int height, long duration) {
                     dataSourceRef.set(dataSource);
                     return false;
                   }

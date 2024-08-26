@@ -126,7 +126,7 @@ public class LoadDrawableTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -162,7 +162,7 @@ public class LoadDrawableTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 
   @Test
@@ -203,6 +203,6 @@ public class LoadDrawableTest {
             any(),
             ArgumentMatchers.<Target<Drawable>>any(),
             eq(DataSource.LOCAL),
-            anyBoolean());
+            anyBoolean(),0, 0, 0);
   }
 }
