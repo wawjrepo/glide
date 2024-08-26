@@ -20,7 +20,9 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.Executor;
 
-/** Utilities for getting ListenableFutures out of Glide. */
+/**
+ * Utilities for getting ListenableFutures out of Glide.
+ */
 public final class GlideFutures {
 
   /**
@@ -127,8 +129,8 @@ public final class GlideFutures {
    * }</pre>
    *
    * @param requestBuilder A request builder for the resource to load. It must be tied to an
-   *     application Glide instance, and must not have a listener set.
-   * @param <T> The type of resource that will be loaded (Bitmap, Drawable, etc).
+   *                       application Glide instance, and must not have a listener set.
+   * @param <T>            The type of resource that will be loaded (Bitmap, Drawable, etc).
    */
   public static <T> ListenableFuture<T> submit(final RequestBuilder<T> requestBuilder) {
     return transformFromTargetAndResult(submitInternal(requestBuilder));
@@ -170,7 +172,9 @@ public final class GlideFutures {
         });
   }
 
-  /** Listener to convert Glide load results into ListenableFutures. */
+  /**
+   * Listener to convert Glide load results into ListenableFutures.
+   */
   private static final class GlideLoadingListener<T> implements RequestListener<T> {
 
     private final Completer<TargetAndResult<T>> completer;
@@ -187,8 +191,9 @@ public final class GlideFutures {
     }
 
     @Override
-    public boolean onResourceReady(
-        @NonNull T resource, @NonNull Object model, Target<T> target, @NonNull DataSource dataSource, boolean isFirst) {
+    public boolean onResourceReady(@NonNull T resource, @NonNull Object model, Target<T> target,
+        @NonNull DataSource dataSource, boolean isFirstResource, int width, int height,
+        long duration) {
       try {
         completer.set(new TargetAndResult<>(target, resource));
       } catch (Throwable t) {
