@@ -93,5 +93,8 @@ public interface RequestListener<R> {
       @NonNull Object model,
       Target<R> target,
       @NonNull DataSource dataSource,
-      boolean isFirstResource);
+      boolean isFirstResource,
+      int width,
+      int height,
+      long duration);
 }
