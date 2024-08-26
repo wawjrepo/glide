@@ -19,7 +19,9 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
 
-/** An {@link android.app.Activity} for displaying full size original GIFs. */
+/**
+ * An {@link android.app.Activity} for displaying full size original GIFs.
+ */
 public class FullscreenActivity extends Activity {
   private static final String EXTRA_RESULT_JSON = "result_json";
   private GifDrawable gifDrawable;
@@ -77,12 +79,9 @@ public class FullscreenActivity extends Activity {
               }
 
               @Override
-              public boolean onResourceReady(
-                  @NonNull Drawable resource,
-                  @NonNull Object model,
-                  Target<Drawable> target,
-                  @NonNull DataSource dataSource,
-                  boolean isFirstResource) {
+              public boolean onResourceReady(@NonNull Drawable resource, @NonNull Object model,
+                  Target<Drawable> target, @NonNull DataSource dataSource, boolean isFirstResource,
+                  int width, int height, long duration) {
                 if (resource instanceof GifDrawable) {
                   gifDrawable = (GifDrawable) resource;
                 } else {
@@ -90,6 +89,7 @@ public class FullscreenActivity extends Activity {
                 }
                 return false;
               }
+
             })
         .into(gifView);
   }
