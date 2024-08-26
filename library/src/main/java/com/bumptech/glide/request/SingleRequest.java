@@ -620,7 +620,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
     boolean isFirstResource = isFirstReadyResource();
     status = Status.COMPLETE;
     this.resource = resource;
-
+    long duration= (long) LogTime.getElapsedMillis(startTime);
     if (glideContext.getLogLevel() <= Log.DEBUG) {
       Log.d(
           GLIDE_TAG,
@@ -635,7 +635,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
               + "x"
               + height
               + "] in "
-              + LogTime.getElapsedMillis(startTime)
+              + duration
               + " ms");
     }
 
@@ -647,7 +647,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
       if (requestListeners != null) {
         for (RequestListener<R> listener : requestListeners) {
           anyListenerHandledUpdatingTarget |=
-              listener.onResourceReady(result, model, target, dataSource, isFirstResource);
+              listener.onResourceReady(result, model, target, dataSource, isFirstResource, width, height, duration);
 
           if (listener instanceof ExperimentalRequestListener) {
             ExperimentalRequestListener<R> experimentalRequestListener =
@@ -660,7 +660,7 @@ public final class SingleRequest<R> implements Request, SizeReadyCallback, Resou
       }
       anyListenerHandledUpdatingTarget |=
           targetListener != null
-              && targetListener.onResourceReady(result, model, target, dataSource, isFirstResource);
+              && targetListener.onResourceReady(result, model, target, dataSource, isFirstResource, width, height, duration);
 
       if (!anyListenerHandledUpdatingTarget) {
         Transition<? super R> animation = animationFactory.build(dataSource, isFirstResource);
