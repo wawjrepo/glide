@@ -20,7 +20,6 @@
  */
 
 apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 version = VERSION_NAME
 group = GROUP
@@ -210,10 +209,5 @@ afterEvaluate { project ->
                 }
             }
         }
-    }
-
-    signing {
-        required { isReleaseBuild() }
-        sign publishing.publications
     }
 }
