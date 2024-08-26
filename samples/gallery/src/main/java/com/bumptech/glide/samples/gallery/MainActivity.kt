@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.MemoryCategory
+import com.bumptech.glide.Priority
 
 /** Displays a [HorizontalGalleryFragment].  */
 class MainActivity : FragmentActivity() {
@@ -18,13 +19,17 @@ class MainActivity : FragmentActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.main_activity)
     Glide.get(this).setMemoryCategory(MemoryCategory.HIGH)
-    if (PERMISSIONS_REQUEST.any {
-        ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
-      }) {
-      requestStoragePermission()
-    } else {
-      replaceFragment()
-    }
+//    if (PERMISSIONS_REQUEST.any {
+//        ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
+//      }) {
+//      requestStoragePermission()
+//    } else {
+//      replaceFragment()
+//    }
+
+    Glide.with(this).load("https://image2a.5i5j.com/scm/HOUSE_CUSTOMER/03776cd1c640481bbbf75d6dd5b12ec3.jpg")
+      .into(findViewById(R.id.imageview))
+
   }
 
   private fun requestStoragePermission() {
@@ -44,17 +49,17 @@ class MainActivity : FragmentActivity() {
     requestCode: Int, permissions: Array<String>, grantResults: IntArray,
   ) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    when (requestCode) {
-      REQUEST_READ_STORAGE -> {
-        // If request is cancelled, the result arrays are empty.
-        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-          replaceFragment()
-        } else {
-          Toast.makeText(this, "Storage permission is required", Toast.LENGTH_LONG).show()
-          requestStoragePermission()
-        }
-      }
-    }
+//    when (requestCode) {
+//      REQUEST_READ_STORAGE -> {
+//        // If request is cancelled, the result arrays are empty.
+//        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//          replaceFragment()
+//        } else {
+//          Toast.makeText(this, "Storage permission is required", Toast.LENGTH_LONG).show()
+//          requestStoragePermission()
+//        }
+//      }
+//    }
   }
 
   companion object {
