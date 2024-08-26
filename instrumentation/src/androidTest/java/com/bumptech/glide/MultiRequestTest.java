@@ -79,7 +79,10 @@ public class MultiRequestTest {
                       @NonNull Object model,
                       Target<Drawable> target,
                       @NonNull DataSource dataSource,
-                      boolean isFirstResource) {
+                      boolean isFirstResource,
+                      int width,
+                      int height,
+                      long duration) {
                     isPrimaryRequestComplete.set(target.getRequest().isComplete());
                     countDownLatch.countDown();
                     return false;
@@ -129,7 +132,10 @@ public class MultiRequestTest {
                       @NonNull Object model,
                       Target<Drawable> target,
                       @NonNull DataSource dataSource,
-                      boolean isFirstResource) {
+                      boolean isFirstResource,
+                      int width,
+                      int height,
+                      long duration) {
                     return false;
                   }
                 });

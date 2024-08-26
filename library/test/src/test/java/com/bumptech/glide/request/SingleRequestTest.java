@@ -177,14 +177,14 @@ public class SingleRequestTest {
     RequestCoordinator requestCoordinator = mock(RequestCoordinator.class);
     when(requestCoordinator.getRoot()).thenReturn(requestCoordinator);
     doAnswer(
-            new Answer() {
-              @Override
-              public Object answer(InvocationOnMock invocation) {
-                Request request = (Request) invocation.getArguments()[0];
-                assertFalse(request.isComplete());
-                return true;
-              }
-            })
+        new Answer() {
+          @Override
+          public Object answer(InvocationOnMock invocation) {
+            Request request = (Request) invocation.getArguments()[0];
+            assertFalse(request.isComplete());
+            return true;
+          }
+        })
         .when(requestCoordinator)
         .canSetImage(any(Request.class));
 
@@ -272,25 +272,25 @@ public class SingleRequestTest {
     Engine.LoadStatus loadStatus = mock(Engine.LoadStatus.class);
 
     when(builder.engine.load(
-            eq(builder.glideContext),
-            eq(builder.model),
-            eq(builder.signature),
-            anyInt(),
-            anyInt(),
-            eq(Object.class),
-            eq(List.class),
-            any(Priority.class),
-            any(DiskCacheStrategy.class),
-            eq(builder.transformations),
-            anyBoolean(),
-            anyBoolean(),
-            any(Options.class),
-            anyBoolean(),
-            anyBoolean(),
-            anyBoolean(),
-            anyBoolean(),
-            any(ResourceCallback.class),
-            anyExecutor()))
+        eq(builder.glideContext),
+        eq(builder.model),
+        eq(builder.signature),
+        anyInt(),
+        anyInt(),
+        eq(Object.class),
+        eq(List.class),
+        any(Priority.class),
+        any(DiskCacheStrategy.class),
+        eq(builder.transformations),
+        anyBoolean(),
+        anyBoolean(),
+        any(Options.class),
+        anyBoolean(),
+        anyBoolean(),
+        anyBoolean(),
+        anyBoolean(),
+        any(ResourceCallback.class),
+        anyExecutor()))
         .thenReturn(loadStatus);
 
     SingleRequest<List> request = builder.build();
@@ -448,10 +448,10 @@ public class SingleRequestTest {
         builder.addRequestListener(listener1).addRequestListener(listener2).build();
 
     when(listener1.onResourceReady(
-            any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
+        any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
         .thenReturn(false);
     when(listener2.onResourceReady(
-            any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
+        any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
         .thenReturn(false);
     request.onResourceReady(
         builder.resource, DataSource.LOCAL, /* isLoadedFromAlternateCacheKey= */ false);
@@ -465,10 +465,10 @@ public class SingleRequestTest {
         builder.addRequestListener(listener1).addRequestListener(listener2).build();
 
     when(listener1.onResourceReady(
-            any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
+        any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
         .thenReturn(false);
     when(listener1.onResourceReady(
-            any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
+        any(List.class), any(Number.class), eq(builder.target), isADataSource(), anyBoolean()))
         .thenReturn(true);
     request.onResourceReady(
         builder.resource, DataSource.REMOTE, /* isLoadedFromAlternateCacheKey= */ false);
@@ -490,10 +490,10 @@ public class SingleRequestTest {
         builder.addRequestListener(listener1).addRequestListener(listener2).build();
 
     when(listener1.onLoadFailed(
-            isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
+        isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
         .thenReturn(false);
     when(listener2.onLoadFailed(
-            isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
+        isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
         .thenReturn(false);
     request.onLoadFailed(new GlideException("test"));
 
@@ -506,10 +506,10 @@ public class SingleRequestTest {
         builder.addRequestListener(listener1).addRequestListener(listener2).build();
 
     when(listener1.onLoadFailed(
-            isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
+        isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
         .thenReturn(false);
     when(listener2.onLoadFailed(
-            isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
+        isAGlideException(), any(Number.class), eq(builder.target), anyBoolean()))
         .thenReturn(true);
 
     request.onLoadFailed(new GlideException("test"));
@@ -564,25 +564,25 @@ public class SingleRequestTest {
     final SingleRequest<List> request = builder.addRequestListener(listener1).build();
 
     when(builder.engine.load(
-            eq(builder.glideContext),
-            eq(builder.model),
-            eq(builder.signature),
-            anyInt(),
-            anyInt(),
-            eq(Object.class),
-            eq(List.class),
-            any(Priority.class),
-            any(DiskCacheStrategy.class),
-            eq(builder.transformations),
-            anyBoolean(),
-            anyBoolean(),
-            any(Options.class),
-            anyBoolean(),
-            anyBoolean(),
-            /* useAnimationPool= */ anyBoolean(),
-            anyBoolean(),
-            any(ResourceCallback.class),
-            anyExecutor()))
+        eq(builder.glideContext),
+        eq(builder.model),
+        eq(builder.signature),
+        anyInt(),
+        anyInt(),
+        eq(Object.class),
+        eq(List.class),
+        any(Priority.class),
+        any(DiskCacheStrategy.class),
+        eq(builder.transformations),
+        anyBoolean(),
+        anyBoolean(),
+        any(Options.class),
+        anyBoolean(),
+        anyBoolean(),
+        /* useAnimationPool= */ anyBoolean(),
+        anyBoolean(),
+        any(ResourceCallback.class),
+        anyExecutor()))
         .thenAnswer(
             new Answer<Object>() {
               @Override
@@ -608,7 +608,7 @@ public class SingleRequestTest {
 
   @Test
   public void
-      testRequestListenerIsCalledWithNotLoadedFromMemoryCacheIfLoadCompletesAsynchronously() {
+  testRequestListenerIsCalledWithNotLoadedFromMemoryCacheIfLoadCompletesAsynchronously() {
     SingleRequest<List> request = builder.addRequestListener(listener1).build();
     request.onSizeReady(100, 100);
     request.onResourceReady(
@@ -665,7 +665,7 @@ public class SingleRequestTest {
 
   @Test
   public void
-      testRequestListenerIsCalledWithNotIsFirstRequestIfRequestCoordinatorReturnsResourceSet() {
+  testRequestListenerIsCalledWithNotIsFirstRequestIfRequestCoordinatorReturnsResourceSet() {
     SingleRequest<List> request = builder.addRequestListener(listener1).build();
     when(builder.requestCoordinator.isAnyResourceSet()).thenReturn(true);
     request.onResourceReady(
@@ -707,7 +707,10 @@ public class SingleRequestTest {
                       @NonNull Object model,
                       Target<List> target,
                       @NonNull DataSource dataSource,
-                      boolean isFirstResource) {
+                      boolean isFirstResource,
+                      int width,
+                      int height,
+                      long duration) {
                     verify(builder.requestCoordinator).onRequestSuccess(target.getRequest());
                     isRequestCoordinatorVerified.set(true);
                     return false;
@@ -746,7 +749,10 @@ public class SingleRequestTest {
                       @NonNull Object model,
                       Target<List> target,
                       @NonNull DataSource dataSource,
-                      boolean isFirstResource) {
+                      boolean isFirstResource,
+                      int width,
+                      int height,
+                      long duration) {
                     return false;
                   }
                 })
@@ -769,7 +775,7 @@ public class SingleRequestTest {
 
   @Test
   public void
-      testRequestListenerIsCalledWithNotIsFirstRequestIfRequestCoordinatorParentReturnsResourceSet() {
+  testRequestListenerIsCalledWithNotIsFirstRequestIfRequestCoordinatorParentReturnsResourceSet() {
     SingleRequest<List> request = builder.addRequestListener(listener1).build();
     RequestCoordinator rootRequestCoordinator = mock(RequestCoordinator.class);
     when(rootRequestCoordinator.isAnyResourceSet()).thenReturn(true);
@@ -871,25 +877,25 @@ public class SingleRequestTest {
         .getSize(any(SizeReadyCallback.class));
 
     when(builder.engine.load(
-            eq(builder.glideContext),
-            eq(builder.model),
-            eq(builder.signature),
-            eq(100),
-            eq(100),
-            eq(Object.class),
-            eq(List.class),
-            any(Priority.class),
-            any(DiskCacheStrategy.class),
-            eq(builder.transformations),
-            anyBoolean(),
-            anyBoolean(),
-            any(Options.class),
-            anyBoolean(),
-            anyBoolean(),
-            /* useAnimationPool= */ anyBoolean(),
-            anyBoolean(),
-            any(ResourceCallback.class),
-            anyExecutor()))
+        eq(builder.glideContext),
+        eq(builder.model),
+        eq(builder.signature),
+        eq(100),
+        eq(100),
+        eq(Object.class),
+        eq(List.class),
+        any(Priority.class),
+        any(DiskCacheStrategy.class),
+        eq(builder.transformations),
+        anyBoolean(),
+        anyBoolean(),
+        any(Options.class),
+        anyBoolean(),
+        anyBoolean(),
+        /* useAnimationPool= */ anyBoolean(),
+        anyBoolean(),
+        any(ResourceCallback.class),
+        anyExecutor()))
         .thenAnswer(new CallResourceCallback(builder.resource));
     SingleRequest<List> request = builder.build();
 

@@ -91,14 +91,16 @@ import org.robolectric.annotation.LooperMode;
 import org.robolectric.annotation.Resetter;
 import org.robolectric.shadow.api.Shadow;
 
-/** Tests for the {@link Glide} interface and singleton. */
+/**
+ * Tests for the {@link Glide} interface and singleton.
+ */
 @LooperMode(LEGACY)
 @RunWith(RobolectricTestRunner.class)
 @Config(
     sdk = ROBOLECTRIC_SDK,
     shadows = {
-      GlideTest.ShadowFileDescriptorContentResolver.class,
-      GlideTest.ShadowMediaMetadataRetriever.class,
+        GlideTest.ShadowFileDescriptorContentResolver.class,
+        GlideTest.ShadowMediaMetadataRetriever.class,
     })
 @SuppressWarnings("unchecked")
 public class GlideTest {
@@ -435,7 +437,10 @@ public class GlideTest {
                   @NonNull Object model,
                   Target<Drawable> target,
                   @NonNull DataSource dataSource,
-                  boolean isFirstResource) {
+                  boolean isFirstResource,
+                  int width,
+                  int height,
+                  long duration) {
                 return false;
               }
             })
@@ -659,7 +664,7 @@ public class GlideTest {
 
   @Test
   public void testByteData() {
-    byte[] data = new byte[] {1, 2, 3, 4, 5, 6};
+    byte[] data = new byte[]{1, 2, 3, 4, 5, 6};
     requestManager.load(data).into(target);
   }
 

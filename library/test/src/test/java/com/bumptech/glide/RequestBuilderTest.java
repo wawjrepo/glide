@@ -159,9 +159,11 @@ public class RequestBuilderTest {
 
     // The #listener API removes any previous listeners, so the first listener should not be called.
     verify(listener1, never())
-        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean(),0, 0, 0);
+        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean(), 0, 0,
+            0);
     verify(listener2)
-        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean(),0, 0, 0);
+        .onResourceReady(any(), any(), isA(Target.class), isA(DataSource.class), anyBoolean(), 0, 0,
+            0);
   }
 
   @Test
@@ -186,7 +188,10 @@ public class RequestBuilderTest {
               @NonNull Object model,
               Target<Object> target,
               @NonNull DataSource dataSource,
-              boolean isFirstResource) {
+              boolean isFirstResource,
+              int width,
+              int height,
+              long duration) {
             return false;
           }
         };
@@ -207,7 +212,10 @@ public class RequestBuilderTest {
               @NonNull Object model,
               Target<Object> target,
               @NonNull DataSource dataSource,
-              boolean isFirstResource) {
+              boolean isFirstResource,
+              int width,
+              int height,
+              long duration) {
             return false;
           }
         };
