@@ -19,7 +19,7 @@ public abstract class ExperimentalRequestListener<ResourceT> implements RequestL
   public void onRequestStarted(Object model) {}
 
   /**
-   * Identical to {@link #onResourceReady(Object, Object, Target, DataSource, boolean)} except that
+   * Identical to {@link #onResourceReady(Object, Object, Target, DataSource, boolean, boolean)} except that
    * {@code isAlternateCacheKey} is provided.
    *
    * @param isAlternateCacheKey True if the data was obtained from the disk cache using an alternate
